@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { setFlats } from '../actions';
 import Flat from './Flat';
 
 function mapDispatchToProps(dispatch) {
