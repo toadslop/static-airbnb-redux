@@ -10,6 +10,6 @@ export default class App extends Component {
         <FlatList />
         <Map />
       </div>
-    )
+    );
   }
 }

@@ -7,6 +7,6 @@ export default class FlatList extends Component {
       <div className="col-sm-7">
         TODO
       </div>
-    )
+    );
   }
 }
