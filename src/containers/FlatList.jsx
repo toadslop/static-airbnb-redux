@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { setFlats } from '../actions';
 import Flat from './Flat';
 
@@ -10,7 +11,7 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default class FlatList extends Component {
+class FlatList extends Component {
   static defaultProps = {
     flats: [{
       name: "Charm at the Steps of Montmartre",
@@ -36,3 +37,5 @@ export default class FlatList extends Component {
     );
   }
 }
+
+export default connect()(FlatList);
