@@ -7,11 +7,17 @@ body {
   flex-wrap: wrap;
 }
 
+.flat {
+  flex: 50% 0 0;
+  cursor: pointer;
+  border: 6px solid transparent;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 265px;
+  height: 280px;
   width: 47%;
 }
 
