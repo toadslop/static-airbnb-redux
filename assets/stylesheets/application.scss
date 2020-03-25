@@ -11,6 +11,14 @@ body {
   flex: 50% 0 0;
   cursor: pointer;
   border: 6px solid transparent;
+  transition: 0.5s;
+  transition-timing-function: ease;
+}
+
+.selected {
+  transform: scale(1.05,1.05);
+  transition: 0.5s;
+  transition-timing-function: ease;
 }
 
 .card-trip {

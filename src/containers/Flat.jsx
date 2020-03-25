@@ -1,11 +1,23 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { selectFlat } from "../actions";
 
-export default class Flat extends Component {
+class Flat extends Component {
+  handleClick = () => {
+    this.props.selectFlat(this.props.flat);
+  }
+
   render() {
+    let classes = "card-trip";
+    console.log(this.props.flat === this.props.selectedFlat)
+    if (this.props.flat === this.props.selectedFlat) {
+      classes += " selected";
+    }
     const { flat } = this.props;
     return (
-      <div className="card-trip">
+      <div className={classes} onClick={this.handleClick}>
         <img src={flat.imageUrl} alt="flat" />
         <div className="card-trip-infos">
           <div>
@@ -21,3 +33,18 @@ export default class Flat extends Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { selectFlat: selectFlat },
+    dispatch
+  );
+}
+
+function mapReduxStateToProps(reduxState) {
+  return {
+    selectedFlat: reduxState.selectedFlat
+  }
+}
+
+export default connect(mapReduxStateToProps, mapDispatchToProps)(Flat);
